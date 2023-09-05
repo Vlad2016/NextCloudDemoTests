@@ -20,7 +20,7 @@ Feature: Application menu functionality
     When Click "photos" in app menu on the Home page
     Then Verify App Navigation list is "VISIBLE" on the Photos page
     When Select "Photos" item in App Navigation menu on the Photos page
-    And Select "Vineyard.img" image on the Photos page
+    And Select "Vineyard.jpg" image on the Photos page
     Then Verify modal-container is opened on the Photos page
     When Close modal-container on the Photos page
     And Select "Videos" item in App Navigation menu on the Photos page
