@@ -10,9 +10,9 @@ class HomePage:
     files_app_menu_xpath = "//li[@data-app-id='{txt}']"
     widget_xpath = "//div[@class='panels']/div[@class='panel']"
     customize_button_xpath = "//button[.//span[text()='Customize']]"
-    edit_widgets_modal_xpath = "//div[@class='modal-container']"
-    edit_widgets_modal_close_button_xpath = edit_widgets_modal_xpath + "//button[@aria-label='Close modal']"
-    widget_by_class_xpath = edit_widgets_modal_xpath + "//li[@class='panel-{txt}']"
+    modal_container_xpath = "//div[@class='modal-container']"
+    edit_widgets_modal_container_close_button_xpath = modal_container_xpath + "//button[@aria-label='Close modal']"
+    widget_by_class_xpath = modal_container_xpath + "//li[@class='panel-{txt}']"
     widget_status_xpath = "//li[@id='status-{txt}']"
 
     def get_app_dashboard_visibility(self):
@@ -28,11 +28,10 @@ class HomePage:
         self.driver.find_element(By.XPATH, self.customize_button_xpath).click()
 
     def get_edit_widgets_modal_visibility(self):
-        # self.driver.implicitly_wait(3)
-        return self.driver.find_element(By.XPATH, self.edit_widgets_modal_xpath).is_displayed()
+        return self.driver.find_element(By.XPATH, self.modal_container_xpath).is_displayed()
 
     def close_edit_widgets_modal(self):
-        self.driver.find_element(By.XPATH, self.edit_widgets_modal_close_button_xpath).click()
+        self.driver.find_element(By.XPATH, self.edit_widgets_modal_container_close_button_xpath).click()
 
     def select_widget(self, widget):
         self.driver.find_element(By.XPATH, self.widget_by_class_xpath.format(txt=widget)).click()
