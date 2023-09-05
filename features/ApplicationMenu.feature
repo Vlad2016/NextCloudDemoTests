@@ -23,13 +23,7 @@ Feature: Application menu functionality
     And Select "Vineyard.img" image on the Photos page
     Then Verify modal-container is opened on the Photos page
     When Close modal-container on the Photos page
-
     And Select "Videos" item in App Navigation menu on the Photos page
     And Select "Nextcloud intro.mp4" video on the Photos page
     Then Verify modal-container is opened on the Photos page
     When Close modal-container on the Photos page
-
-
-#    And Select "Documents" folder on the Files page
-#    And Select "Welcome to Nextcloud Hub" file on the Files page
-#    Then Verify office document is opened on the Files page
