@@ -17,7 +17,7 @@ def step_impl(context, app_title):
 @then('Verify no widgets are present on the Home page')
 def step_impl(context):
     home_page = HomePage(context.driver)
-    assert home_page.get_widgets_amount() == 1
+    assert home_page.get_widgets_amount() == 0
 
 
 @when('Click "Customize" button on the Home page')

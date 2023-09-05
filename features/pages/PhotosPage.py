@@ -8,10 +8,10 @@ class PhotosPage:
 
     app_navi_list_xpath = "//ul[@class='app-navigation__list']"
     app_navi_item_xpath = app_navi_list_xpath + "//li[.//span[contains(text(), '{text}')]]"
-    image_by_filename_xpath = "//li[.//img[@alt='{image}]']"
-    video_by_filename_xpath = "//li[.//a[contains(@aria-label, '{video}]')]"
+    image_by_filename_xpath = "//li[.//img[@alt='{image}']]"
+    video_by_filename_xpath = "//li[.//a[contains(@aria-label, '{video}')]]"
     modal_container_xpath = "//div[@class='modal-container']"
-    modal_container_close_button_xpath = modal_container_xpath + "//button[@aria-label='Close modal']"
+    modal_container_close_button_xpath = "//div[@class='modal-header']//button[@aria-label='Close modal']"
     def get_app_navi_list_visibility(self):
         result = "NOT_VISIBLE"
         if self.driver.find_element(By.XPATH, self.app_navi_list_xpath).is_displayed():

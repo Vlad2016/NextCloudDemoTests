@@ -28,6 +28,7 @@ class HomePage:
         self.driver.find_element(By.XPATH, self.customize_button_xpath).click()
 
     def get_edit_widgets_modal_visibility(self):
+        self.driver.implicitly_wait(3)
         return self.driver.find_element(By.XPATH, self.modal_container_xpath).is_displayed()
 
     def close_edit_widgets_modal(self):
