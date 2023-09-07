@@ -17,6 +17,8 @@ def step_impl(context, item):
 @when('Select "{filename}" image on the Photos page')
 def step_impl(context, filename):
     PhotosPage(context.driver).select_image_by_filename(filename)
+
+
 @when('Select "{filename}" video on the Photos page')
 def step_impl(context, filename):
     PhotosPage(context.driver).select_video_by_filename(filename)
@@ -27,7 +29,7 @@ def step_impl(context):
     photo_page = PhotosPage(context.driver)
     assert photo_page.get_modal_container_visibility()
 
+
 @when('Close modal-container on the Photos page')
 def step_impl(context):
     PhotosPage(context.driver).close_modal_container()
-
